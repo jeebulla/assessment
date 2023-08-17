@@ -69,7 +69,35 @@ if (accessCode === pinCode) {
       }
     }
   } else if (transaction === 3) {
-    alert("Welcome");
+    const self = +prompt(`
+    1. Self
+    2. Others`);
+    if (self === 1) {
+      +prompt(`Enter amount`);
+      let confirmation = +prompt("Enter your Secret pin");
+      if (confirmation === userPin) {
+        alert(`Transfer Complete`);
+      } else {
+        alert("Transaction failed");
+      }
+    } else if (self === 2) {
+      let userNum = +prompt(`Enter Phone Number`);
+      prompt(`Enter Network
+       1. MTN
+       2. GLO
+       3. 9MOBILE
+       4. AIRTEL`);
+      const rechargeAmount = +prompt("Enter recharge amount");
+      let confirmation = +prompt("Enter your Secret pin");
+      if (confirmation === userPin) {
+        alert(`${userNum} has been recharged ${rechargeAmount}
+        Thank you.`);
+      } else {
+        alert("Transaction failed");
+      }
+    } else {
+      alert("Transaction failed");
+    }
   }
 } else {
   alert(
