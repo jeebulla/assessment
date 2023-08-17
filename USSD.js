@@ -98,9 +98,17 @@ if (accessCode === pinCode) {
     } else {
       alert("Transaction failed");
     }
+  } else if (transaction === 4) {
+    alert("Feature unavailable");
+  } else if (transaction === 5) {
+    alert("Feature unavailable");
+  } else {
+    alert("Invalid Transaction");
   }
 } else {
-  alert(
-    "Welcome to USSD Banking. ₦6.98 network change will apply to your account for banking services on this channel. Press 901 to accept or 2 to reject"
+  confirm(
+    `Welcome to Access Bank USSD Banking.
+     ₦6.98 network change will apply to your account for banking services on this channel.
+     Press 901 to accept or 2 to reject`
   );
 }
